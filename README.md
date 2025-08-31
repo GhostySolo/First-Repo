@@ -48,6 +48,9 @@ Contributions are welcome! Please:
     5. Open a Pull Request describing changes and screenshots (if visual).
 For issues/ideas, open a GitHub Issue with steps to reproduce (if applicable).
 
+GenAI:
+https://genai.ecpi.edu/canvas/share/abb6200c-d54d-425f-9545-a6d4f74039ea
+
 <img width="3741" height="2083" alt="image" src="https://github.com/user-attachments/assets/e0dd3ec9-896a-4a0f-976e-d7bacd3b7b1d" />
 
 

@@ -9,14 +9,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Welcome</title>
 
-  <!-- Link to required stylesheet -->
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <!-- Header with welcome and navigation -->
   <header>
     <h1>Welcome</h1>
-    <nav>
+    <nav aria-label="Primary">
       <ul>
         <li><a href="#about">About</a></li>
         <li><a href="#projects">Projects</a></li>
@@ -34,12 +33,62 @@
 
     <section id="projects">
       <header><h2>Projects</h2></header>
-      <p>Projects section content.</p>
+
+      <!-- Projects table with caption, colgroup, thead/tbody/tfoot -->
+      <table>
+        <caption>Sample Projects</caption>
+        <colgroup>
+          <col class="col-first">
+          <col>
+          <col class="col-third">
+        </colgroup>
+        <thead>
+          <tr>
+            <th scope="col">Project</th>
+            <th scope="col">Description</th>
+            <th scope="col">Image</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Project Alpha</th>
+            <td>Short description of Project Alpha.</td>
+            <td><div class="img-placeholder" aria-label="Image placeholder"></div></td>
+          </tr>
+          <tr>
+            <th scope="row">Project Beta</th>
+            <td>Short description of Project Beta.</td>
+            <td><div class="img-placeholder" aria-label="Image placeholder"></div></td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="3">2 projects</td>
+          </tr>
+        </tfoot>
+      </table>
     </section>
 
     <section id="contact">
       <header><h2>Contact</h2></header>
       <p>Contact section content.</p>
+
+      <!-- New: Accessible Contact Form -->
+      <form id="contactForm">
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" required>
+
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" required>
+
+        <label for="subject">Subject</label>
+        <input id="subject" name="subject" type="text">
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5"></textarea>
+
+        <input type="submit" value="Send">
+      </form>
     </section>
   </main>
 

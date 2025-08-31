@@ -1,11 +1,15 @@
-/* Background and readable font */
+/* =========================
+   Base
+   ========================= */
 body {
   font-family: Arial, Helvetica, sans-serif;
   background-color: #f0f4f8;
   margin: 0;
 }
 
-/* Header: centered text, size/weight, padding, background color */
+/* =========================
+   Header & Navigation
+   ========================= */
 header {
   text-align: center;
   background-color: #1565c0;
@@ -15,35 +19,140 @@ header {
 header h1 {
   font-size: 2rem;
   font-weight: bold;
-  margin: 0;
+  margin: 0 0 8px 0;
 }
 
-/* Navigation: horizontal list, no bullets, hover effect */
+/* Nav menu as Flexbox */
 header nav ul {
   list-style: none;
   padding: 0;
-  margin: 8px 0 0;
-}
-header nav li {
-  display: inline;
+  margin: 0;
+
+  display: flex;            /* flexbox */
+  flex-direction: row;      /* horizontal items */
+  justify-content: center;  /* center across page */
+  gap: 8px;                 /* spacing between items */
 }
 header nav a {
   color: #ffffff;
   text-decoration: none;
-  padding: 0 6px;
+  padding: 8px 10px;
+  border-radius: 4px;
+
+  /* Transition for hover background color */
+  transition: background-color 0.2s ease;
 }
 header nav a:hover {
-  color: #ffeb3b; /* simple hover effect on the link itself */
+  background-color: #0d47a1;
 }
 
-/* Main sections: padding & margin; visually distinct via background color */
+/* =========================
+   Main content as Flexbox
+   ========================= */
+main {
+  display: flex;            /* flexbox on main container */
+  flex-direction: column;   /* stack sections vertically */
+  gap: 12px;                /* space between sections */
+  padding: 12px;
+}
+
+/* Sections: base look + zoom interaction */
 main section {
   padding: 12px;
-  margin: 12px 0;
   background-color: #ffffff;
+
+  /* Smooth zoom on hover */
+  transition: transform 0.3s ease;
+}
+main section:hover {
+  transform: scale(1.02);
 }
 
-/* Footer: smaller font, centered text, contrasting colors */
+/* =========================
+   Project Table Styles
+   ========================= */
+#projects table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+}
+#projects th,
+#projects td {
+  border: 1px solid #cccccc;
+  padding: 8px;
+  vertical-align: top;
+  text-align: left;
+}
+#projects thead th {
+  background-color: #e9eef6;
+}
+#projects col.col-first,
+#projects col.col-third {
+  background-color: #f8fbff;
+}
+.img-placeholder {
+  width: 120px;
+  height: 80px;
+  background-color: #dddddd;
+  border: 1px solid #bbbbbb;
+}
+
+/* =========================
+   Contact Form as Flexbox
+   ========================= */
+#contact form {
+  display: flex;            /* flexbox form */
+  flex-direction: column;   /* stack label/fields */
+  gap: 10px;                /* spacing between controls */
+  margin-top: 8px;
+}
+
+/* Inputs & textarea: padding, border, radius, transition */
+#contact input[type="text"],
+#contact input[type="email"],
+#contact textarea {
+  border: 1px solid #bbb;
+  padding: 8px;
+  border-radius: 4px;                     /* NEW: subtle rounding */
+  transition: border-color 0.3s ease;     /* required transition */
+}
+
+/* Hover state: accent border */
+#contact input[type="text"]:hover,
+#contact input[type="email"]:hover,
+#contact textarea:hover {
+  border-color: #1565c0;
+}
+
+/* Focus state: accent border + visible focus ring */
+#contact input[type="text"]:focus,
+#contact input[type="email"]:focus,
+#contact textarea:focus {
+  border-color: #1565c0;
+  outline: 2px solid #1565c0;             /* NEW: accessible focus */
+  outline-offset: 2px;
+}
+
+/* Submit button: colors, radius, transition */
+#contact input[type="submit"] {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+
+  /* required transition */
+  transition: background-color 0.3s ease;
+}
+#contact input[type="submit"]:hover,
+#contact input[type="submit"]:focus {
+  background-color: #555;
+}
+
+/* =========================
+   Footer
+   ========================= */
 footer {
   text-align: center;
   font-size: 0.875rem;
@@ -52,9 +161,25 @@ footer {
   padding: 10px;
 }
 
-/* Hover a nav link -> highlight its matching section text in yellow */
-body:has(header nav a[href="#about"]:hover)    #about,
-body:has(header nav a[href="#projects"]:hover) #projects,
-body:has(header nav a[href="#contact"]:hover)  #contact {
-  color: #ffeb3b;
+/* =========================
+   Responsive Media Queries
+   - minimum widths for phone/tablet/desktop
+   ========================= */
+
+/* Phone and up (≥ 480px) */
+@media (min-width: 480px) {
+  main { gap: 14px; }
+  header nav a { padding: 8px 12px; }
+}
+
+/* Tablet and up (≥ 768px) */
+@media (min-width: 768px) {
+  main { gap: 16px; }
+  #contact form { gap: 12px; }
+}
+
+/* Desktop and up (≥ 1024px) */
+@media (min-width: 1024px) {
+  main { gap: 18px; }
+  header nav a { padding: 10px 14px; }
 }

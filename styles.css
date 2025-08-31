@@ -1,0 +1,51 @@
+/* Background and readable font */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f0f4f8;
+}
+
+/* Header: centered text, size/weight, padding, background color */
+header {
+  text-align: center;
+  background-color: #1565c0;
+  padding: 16px;
+  color: #ffffff;
+}
+header h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+/* Navigation: horizontal list, no bullets, hover effect */
+header nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 0;
+}
+header nav li {
+  display: inline;
+}
+header nav a {
+  color: #ffffff;
+  text-decoration: none;
+}
+header nav a:hover {
+  color: #ffeb3b; /* simple hover effect */
+}
+
+/* Main sections: padding & margin; visually distinct via background color */
+main section {
+  padding: 12px;
+  margin: 12px 0;
+  background-color: #ffffff;
+}
+
+/* Footer: smaller font, centered text, contrasting colors */
+footer {
+  text-align: center;
+  font-size: 0.875rem;
+  background-color: #222222;
+  color: #ffffff;
+  padding: 10px;
+}

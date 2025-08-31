@@ -1,1 +1,1 @@
-# First-Repo
+# GhostySolo/GhostySolo.github.io
